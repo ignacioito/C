@@ -1,8 +1,6 @@
 // ***************************************************************************************************
-// Nom : types.c
+// Nom : Syracuse.c
 // Auteur : Marcel Andreazza
-// Date : 4 septembre 2018
-// Réponse aux exercices de VariablesTypesOperateurs.pdf, page 19
 // ***************************************************************************************************
 
 #include <stdio.h>
