@@ -30,7 +30,7 @@ void syracuse(int n){
 		syracuse (n/2);
 	else
 		syracuse ((n*3) + 1);
-
+//	printf("%d\n", n); Se eu coloco o print aqui ele imprime a pilha inversamente
 }
 int main(){
 	syracuse(10);
