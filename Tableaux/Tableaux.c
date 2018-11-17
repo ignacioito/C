@@ -59,11 +59,10 @@ void afficher_tableauF(int* tab, int taille){
         printf("[%d] ",tab[i]);
 } 
 /*----------------------------------------------------------------*/
-void imprimerMatrice(const int nbRangees, const int nbColonnes, int matrice[nbRangees][nbColonnes])
-{
-	for (int i = 0; i < nbRangees; i++){
-		for (int j = 0; j < nbColonnes; j++)
-			printf("[%d] ", matrice[i][j]);
+void imprimerMatrice(const int nbRangees, const int nbColonnes, int matrice[nbRangees][nbColonnes]){
+    for (int i = 0; i < nbRangees; i++){
+	for (int j = 0; j < nbColonnes; j++)
+	    printf("[%d] ", matrice[i][j]);
 		printf("\n");
     }
 }
