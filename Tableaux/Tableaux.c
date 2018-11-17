@@ -4,6 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 
+/*----------------------------------------------------------------*/
 /*
 
 [Déclaration tableau]
@@ -25,7 +26,6 @@
     tableau[5] même chose que : *(tableau + 5)
     Tableau c'est un pointeur vers le premier élément
 */
-
 /*----------------------------------------------------------------*/
 
 #define TailleTableau 5
