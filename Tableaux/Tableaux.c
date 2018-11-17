@@ -74,6 +74,7 @@ int main(void){
     tableauX [2] = -15;
     tableauX [3] = 10;
     tableauX [4] = 18;
+    //int tableauX[5] = {14, 5, -15, 10, 18}
 
     afficher_tableau1(tableauX, TailleTableau);
     afficher_tableau2(tableauX, TailleTableau);
