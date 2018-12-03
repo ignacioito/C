@@ -110,20 +110,16 @@ void printLabyrinthe(int labyrinthe[LABYRINTHE][LABYRINTHE])
 //    1 si nbDames peuvent être placées dans l'échiquier
 //    0 sinon.
 //*********************************************************
-int dames(int echiquier[TAILLE][TAILLE], int nbDames)
-{
-  if(nbDames == 0)
-  {	
+int dames(int echiquier[TAILLE][TAILLE], int nbDames){
+  if(nbDames == 0){	
   	compteur++; //para imprimir somente o numero de formatos possiveis
   	//printEchiquier(echiquier); //para imprimir cada uma das soluçoes
   	//printf ("NB formats: %d\n", ++compteur);
   }
   //for(int i = 0; i < TAILLE; i++)
   int i = TAILLE - nbDames; //força o primeiro elemento a ser colocado no primeiro local da matriz 0,0
-  for (int j = 0; j < TAILLE; j++)
-  {
-  	if(libre(echiquier, i,j))
-	{
+  for (int j = 0; j < TAILLE; j++){
+  	if(libre(echiquier, i,j)){
 		echiquier[i][j] = 1;
 		if(dames(echiquier, nbDames - 1))
 			return 1;
@@ -133,8 +129,8 @@ int dames(int echiquier[TAILLE][TAILLE], int nbDames)
 }
 
 //*********************************************************
-int chemin (int labyrinthe[LABYRINTHE][LABYRINTHE], int x, int y) //x = position souris dans le labyrinthe; y = position colonne
-{
+int chemin (int labyrinthe[LABYRINTHE][LABYRINTHE], int x, int y){ //x = position souris dans le labyrinthe; y = position colonne
+
 	labyrinthe[x][y] = 2;
 	
 	if (y == (LABYRINTHE-1) && x == (LABYRINTHE-1)) //condition de sortie
@@ -164,8 +160,7 @@ int chemin (int labyrinthe[LABYRINTHE][LABYRINTHE], int x, int y) //x = position
 //*********************************************************
 // Pilote pour le problème des dames.
 //*********************************************************
-int main()
-{
+int main(){
   int echiquier[TAILLE][TAILLE];
   for (int i = 0; i < TAILLE; i++)
     for (int j = 0; j < TAILLE; j++)
