@@ -129,29 +129,26 @@ int dames(int echiquier[TAILLE][TAILLE], int nbDames){
 }
 
 //*********************************************************
-int chemin (int labyrinthe[LABYRINTHE][LABYRINTHE], int x, int y){ //x = position souris dans le labyrinthe; y = position colonne
+int chemin (int labyrinthe[LABYRINTHE][LABYRINTHE], int x, int y){ 
+//x = position souris dans le labyrinthe; y = position colonne
 
 	labyrinthe[x][y] = 2;
 	
-	if (y == (LABYRINTHE-1) && x == (LABYRINTHE-1)) //condition de sortie
+	if (y == (LABYRINTHE-1) && x == (LABYRINTHE-1)) //condition de sortie - empeche le débordement 
 		printLabyrinthe(labyrinthe);
 		
-	if (y+1 < LABYRINTHE)
-		if (labyrinthe[x][y+1] == 0)
-			if (chemin(labyrinthe, x, y+1) == 1)
-				return 1;
-	if (x+1 < LABYRINTHE)
-		if (labyrinthe[x+1][y] == 0)
-			if (chemin(labyrinthe, x+1, y) == 1)
-				return 1;
-  	if (y-1 >= 0)
-		if (labyrinthe[x][y-1] == 0)
-			if (chemin(labyrinthe, x, y-1) == 1)
-				return 1;
-	if (x-1 >= 0)
-		if (labyrinthe[x-1][y] == 0)
-			if (chemin(labyrinthe, x-1, y) == 1)
-				return 1;
+	if (y+1 < LABYRINTHE && labyrinthe[x][y+1] == 0)
+		if (chemin(labyrinthe, x, y+1) == 1) // il existe un chemin jusqu'au fromage
+			return 1;
+	if (x+1 < LABYRINTHE && labyrinthe[x+1][y] == 0)// et si c'est vide
+		if (chemin(labyrinthe, x+1, y) == 1)
+			return 1;
+  	if (y-1 >= 0 && labyrinthe[x][y-1] == 0) // s'il trouve un nombre negatif il va arreter
+		if (chemin(labyrinthe, x, y-1) == 1)
+			return 1;
+	if (x-1 >= 0 && labyrinthe[x-1][y] == 0)
+		if (chemin(labyrinthe, x-1, y) == 1)
+			return 1;
 	
   	labyrinthe[x][y] = 0;	
   	return 0;
