@@ -14,7 +14,7 @@
 #define TAILLE 4
 int compteur = 0;
 #define LABYRINTHE 8
-#define DESSIN_MUR "▇▇"
+#define DESSIN_MUR "▇▇"// unicode
 #define DESSIN_SOURIS " *"
 #define DESSIN_VIDE "  "
 #define DESSIN_FROMAGE "🧀" // unicode
